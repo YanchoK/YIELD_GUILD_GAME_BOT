@@ -20,16 +20,19 @@ function handleSymbol(symbol) {
         case 'C':
             buffer = "0";
             runningTotal = 0;
+            colorPressedButton(previousOperator, false);
+            previousOperator = null;
             break;
 
         case '←':
-            debugger;
             if (buffer.length === 1) {
                 buffer = "0";
             }
             else {
                 buffer = buffer.substring(0, buffer.length - 1)
             }
+
+            colorPressedButton(previousOperator,false);
             break;
 
         case '+':
@@ -45,6 +48,7 @@ function handleSymbol(symbol) {
                 return;
             }
             flushOperation(parseInt(buffer));
+            colorPressedButton(previousOperator,false);
             previousOperator = null;
             buffer = runningTotal;
             runningTotal = 0;
@@ -55,6 +59,8 @@ function handleSymbol(symbol) {
 function handleNumber(stringNumber) {
     if (buffer === "0") {
         buffer = stringNumber;
+
+        colorPressedButton(previousOperator,false);
     }
     else {
         buffer += stringNumber;
@@ -76,6 +82,7 @@ function handleMath(symbol) {
     }
 
     previousOperator = symbol;
+    colorPressedButton(symbol, true);
 
     buffer = '0';
 }
@@ -92,6 +99,38 @@ function flushOperation(intBuffer) {
     }
     else if (previousOperator === '÷') {
         runningTotal /= intBuffer;
+    }
+}
+
+function colorPressedButton(symbol, isPressed) {
+    if (previousOperator === null) {
+        return;
+    }
+
+    let symbolWord;
+
+    switch (symbol) {
+        case '+':
+            symbolWord = 'plus';
+            break;
+        case '−':
+            symbolWord = 'minus';
+            break;
+        case '×':
+            symbolWord = 'times';
+            break;
+        case '÷':
+            symbolWord = 'divide';
+            break;
+    }
+
+    const opButton = document.querySelector(`#${symbolWord}`);
+
+    if (isPressed) {
+        opButton.classList.add('colorPressedButton');
+    }
+    else {
+        opButton.classList.remove('colorPressedButton');
     }
 }
 

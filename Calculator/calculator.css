@@ -59,3 +59,6 @@ body {
 .calc-button:last-child:active{
     background-color: #dd8d37;
 }
+.colorPressedButton:last-child{
+    background-color: #eb7f0c;
+}
