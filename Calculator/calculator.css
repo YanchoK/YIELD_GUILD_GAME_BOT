@@ -28,6 +28,7 @@ body {
     padding: 20px 5px;
 }
 .calc-button{
+    font-family: 'Calibri Regular';
     background-color: #d8d9db;
     color: black;
     border: none;
