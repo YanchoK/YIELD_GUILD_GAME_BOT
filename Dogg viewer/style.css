@@ -1,0 +1,83 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: tomato;
+}
+
+header h1{
+    margin-left: 2rem;
+    /* color: white; */
+}
+
+.button-select{
+    margin: 1rem 2rem 0 0;
+}
+
+.other-img-btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin-right: 1rem;
+    background-color: white;
+    border: 1px solid black;
+}
+.other-img-btn:hover{
+    color: rgb(108, 0, 209);
+    border: 1px solid blueviolet;
+}
+
+header select{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    align-content: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border: 1px solid black;
+}
+
+section{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.doggo-image{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    max-height: 600px;
+}
+
+@keyframes spin{
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1.8s linear infinite;
+    margin-top: 9rem;
+    padding: 0;
+    text-align: center;
+    font-size: 3rem;
+    width: fit-content;
+    height: fit-content;
+    display:none;
+  }
+
+  .doggo-image{
+      display: none;
+  }
+
+.show{
+    display: block;
+}
