@@ -111,14 +111,14 @@ body {
     margin: 3rem 1rem;
 }
 
-@media(min-width:755px){
+@media(min-width:992px){
     .container{
         --content-padding: 3rem;
         --content-spacing: 5rem;
         max-width: 900px;
         grid-template-columns: 1fr 1fr 1fr;
     }
-  
+ 
 }
 
 .column {
@@ -158,31 +158,15 @@ body {
     color: var(--clr-primary-1);
 }
 
-.column_1 .btn:is(:hover, :focus) {
-    background-color: var(--clr-primary-1);
-    color: var(--clr-neutral-100);
-}
-
 .column_2 .btn {
     color: var(--clr-primary-2);
-}
-
-.column_2 .btn:is(:hover, :focus) {
-    background-color: var(--clr-primary-2);
-    color: var(--clr-neutral-100);
 }
 
 .column_3 .btn {
     color: var(--clr-primary-3);
 }
 
-.column_3 .btn:is(:hover, :focus) {
-    background-color: var(--clr-primary-3);
+.btn:is(:hover, :focus) {
+    background-color: transparent;
     color: var(--clr-neutral-100);
 }
-
-/* todo:
-
-
-dekstop view
-*/
